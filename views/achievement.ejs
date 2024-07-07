@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-gradient {
+            background: linear-gradient(45deg, #df4881, #c430d7);
+        }
+        .text-gradient {
+            background: linear-gradient(45deg, #df4881, #c430d7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <%- include("includes/header.ejs") %>
+
+
+    <!-- Header Section -->
+    <header class="bg-gradient text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Our Achievements</h1>
+        </div>
+    </header>
+
+    <!-- Achievements Section -->
+    <section class="py-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center text-gradient mb-8">Only those who attempt the absurd can achieve the impossible.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2F10.JPEG?alt=media&token=b79284bc-e3ac-4ab6-a99c-a40ba45ef603" alt="Achievement Image 1">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2FWhatsApp%20Image%202024-03-17%20at%208.15.10%20PM.jpeg?alt=media&token=f9f82434-8195-4126-bc0b-1ede865ab529" alt="Achievement Image 2">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2FWhatsApp%20Image%202024-03-22%20at%207.50.26%20AM.jpeg?alt=media&token=7265fda0-b5a1-4d51-ab38-6bfb9298ed5d" alt="Achievement Image 3">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2FWhatsApp%20Image%202024-03-30%20at%201.38.48%20PM%20(1).jpeg?alt=media&token=c81f067e-090b-4dda-9273-2b6d453f321d" alt="Achievement Image 4">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2FWhatsApp%20Image%202024-03-30%20at%201.38.50%20PM%20(2).jpeg?alt=media&token=e3e54375-b23d-4eb5-94d6-8917811c0df2" alt="Achievement Image 5">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/edc-pierc.appspot.com/o/achievers%2FWhatsApp%20Image%202024-03-30%20at%201.38.51%20PM%20(2).jpeg?alt=media&token=97997d0d-005c-46c8-a0c7-b5cf969e13a6" alt="Achievement Image 6">
+                </div>
+                
+            </div>
+        </div>
+    </section>   
+    <footer id="contact">
+        <!-- Content of footer section -->
+        <%- include("includes/footer.ejs") %>
+
+    </footer>
+</body>
+</html>

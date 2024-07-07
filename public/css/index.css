@@ -1,0 +1,57 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+/* Image Slider */
+.img-slides{
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+
+}
+
+/* Footer Section */
+footer {
+    background-color: #222;
+    color: #888;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero, .about-us, footer {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
+    <title>EDC Cell</title>
+</head>
+
+
+<body>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <!-- Content of home section -->
+        <%- include("includes/home.ejs") %>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-us">
+        <!-- Content of about section -->
+        <%- include("includes/about.ejs") %>
+    </section>
+    <section id="img-slide" class="img-slides">
+        <!-- Content of about section -->
+        <%- include("includes/imgslider.ejs") %>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" >
+        <!-- Content of footer section -->
+        <%- include("includes/footer.ejs") %>
+
+    </footer>
+</body>
+</html>

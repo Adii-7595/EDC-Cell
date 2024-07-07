@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.about-us {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%; /* Ensure it takes 80% of the viewport width */
+    /* max-width: 100%; Limit the max width */
+    display: block; /* Added */
+
+}
+
+.counters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+}
+
+.counter {
+    margin: 20px;
+    flex-basis: calc(33.33% - 40px); /* Three items per row, minus margins */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.counter:hover {
+    transform: translateY(-10px); /* Add a lift effect on hover */
+}
+
+.count {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2d8;
+}
+
+.counter p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .counter {
+        flex-basis: calc(50% - 40px); /* Two items per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .counter {
+        flex-basis: calc(100% - 40px); /* One item per row for small screens */
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Application Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <%- include("includes/header.ejs") %>
+
+        <div class="form-container">
+            <div class="nav">
+                <img src="edc-logo.jpg" alt="logo" class="form-logo">
+                <h1 class="form-heading">Startup Support</h1>
+                <h3>We are here to help you</h3>
+            </div>
+            <div class="form-body">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enrollment">Enrollment Number</label>
+                        <input type="text" id="enrollment" name="enrollment" placeholder="Enter your enrollment number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Applicant Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select an option</option>
+                            <option value="student">Parul University Student</option>
+                            <option value="staff">Parul University Staff member</option>
+                            <option value="alumni">Parul University Alumni</option>
+                            <option value="other">Others</option>
+                        </select>
+                        <div class="other-category">
+                            <input type="text" id="otherCategory" name="otherCategory" placeholder="Please specify">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamMembers">Names of all Team Members (comma-separated)</label>
+                        <input type="text" id="teamMembers" name="teamMembers"
+                            placeholder="Name of all your Team Members">
+                    </div>
+                    <div class="form-group">
+                        <label for="startupTitle">Title of the Startup/Idea/Innovation</label>
+                        <input type="text" id="startupTitle" name="startupTitle" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="problemStatement">Define the Problem that your Startup is solving</label>
+                        <textarea id="problemStatement" name="problemStatement"
+                            placeholder="Describe the problem"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="solutionDescription">Describe the Solution</label>
+                        <textarea id="solutionDescription" name="solutionDescription"
+                            placeholder="Describe the solution"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="uniqueness">Explain the uniqueness and distinctive features</label>
+                        <textarea id="uniqueness" name="uniqueness"
+                            placeholder="Explain uniqueness and features"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Select Your College</label>
+                        <select id="college" name="college" required>
+                            <option value="">Select an option</option>
+                            <option value="law">Parul University Law</option>
+                            <option value="commerce">Parul University of Commerce</option>
+                            <option value="PIET">Parul Institute of Engineering and technology</option>
+                            <option value="PIT">Parul Institute of technology</option>
+                            <option value="PIETD">Parul Institute of Engineering and technology-Diploma Studies</option>
+                            <option value="other">Others</option>
+                        </select>
+                        <div class="other-category">
+                            <input type="text" id="otherCategory" name="otherCategory" placeholder="Please specify">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h2>Current Stage of Startup</h2>
+                        <label> <input type="radio" name="stage" value="idea">Idea</label><br>
+                        <label><input type="radio" name="stage" value="prototype">Prototype stage (if you have developed
+                            any
+                            working prototype of a solution proposed)</label><br>
+
+                        <label><input type="radio" name="stage" value="startup"> Startup stage (if you have developed a
+                            final marketable product/service platform) </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <footer id="contact">
+            <!-- Content of footer section -->
+            <%- include("includes/footer.ejs") %>
+
+        </footer>
+</body>
+
+</html>

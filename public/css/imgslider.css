@@ -1,0 +1,85 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+.gallery-container {
+    overflow: hidden;
+    width: 90%; /* Adjust width as needed */
+    max-width: 100%; /* Limit max width */
+    border: 2px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 60px;
+
+}
+
+.gallery {
+    display: flex;
+    gap: 10px; /* Adjust spacing between images */
+    width: fit-content;
+    animation: slide 20s linear infinite; /* Adjust total duration */
+    height: 400px; /* Ensure consistent height */
+    
+}
+
+.gallery img {
+    width: 300px; /* Adjust image width */
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Animation for sliding images */
+/* @keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    90% {
+        transform: translateX(-100%);
+    }
+    95% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+} */
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-310px * 10 - 300px )); /* Translate by the width of all images plus gaps */
+    }
+}
+
+/* .gallery::after {
+    content: '';
+    display: block;
+    width: 100%;
+} */
+
+.gallery:hover {
+    animation-play-state: paused;
+}
+
+
+
+

@@ -1,0 +1,145 @@
+        /* Reset some default styles */
+        body, h1, h2, h3, p, form, input, label, textarea, select, option {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        /* Apply background and padding to the body */
+        body {
+            background: #f4f4f9;
+            padding: 20px;
+            
+
+        }
+
+        /* Form container styling */
+        .form-container {
+            max-width: 800px;
+            margin: auto;
+            /* background: #ffffff; */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-image: url('image/back-image.png');
+        }
+
+        /* Header section styling */
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+            display: inline;
+        }
+         .form-heading{
+            color:red;
+         }
+
+        .form-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        /* Form body styling */
+        .form-body {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Form labels */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* Form input fields */
+        input[type="email"], input[type="tel"], input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 1em;
+            transition: border 0.3s ease;
+        }
+
+        input[type="email"]:focus, input[type="tel"]:focus, input[type="text"]:focus, textarea:focus, select:focus {
+            border-color: #555;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        /* Select dropdown */
+        select {
+            appearance: none;
+            background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="5"><path fill="%23666" d="M2 0L0 2h4L2 0zm0 5L0 3h4l-2 2z"/></svg>') no-repeat right 10px center/12px 12px;
+            padding-right: 35px;
+        }
+
+        /* Radio buttons */
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Other category input */
+        .other-category {
+            margin-top: 10px;
+        }
+
+        /* Form button */
+        input[type="submit"] {
+            background: #0066ff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #0057e7;
+        }
+
+        /* Specific styling for the "Current Stage of Startup" section */
+        .form-group h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Make form responsive */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    
