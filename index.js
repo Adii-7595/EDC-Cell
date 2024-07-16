@@ -16,7 +16,7 @@ app.set("views", path.join(__dirname, "/views"));
 
 const mongoose = require("mongoose");
 const mongoURL = "mongodb://127.0.0.1:27017/edc";
-const StartupApplication = require("./models/");
+const StartupApplication = require("./models/StartupApplication");
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
@@ -81,14 +81,21 @@ app.post("/submit", async (req, res) => {
             stage
         });
 
+        
         await newApplication.save();
-        res.send("Form submitted successfully!");
+
+        res.render("successfull.ejs")
     } catch (error) {
         console.error("Error submitting form:", error);
         res.status(500).send("Error submitting form");
     }
 });
 
+
+
+app.get("/apply/home", (req,res)=>{
+    res.redirect("/")
+})
 app.listen(port, () => {
-    console.log(`The server is running on port: http://localhost:${port}`);
+    console.log(`The server is running on port${port}`);
 });
