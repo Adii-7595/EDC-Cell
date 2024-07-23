@@ -4,29 +4,48 @@ const port = 3000;
 
 const path = require("path");
 const bodyParser = require("body-parser");
+const session = require("express-session");
+const mongoose = require("mongoose");
+const dotenv = require('dotenv');
 
+dotenv.config();
+
+// Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "/public/css")));
 app.use(express.static(path.join(__dirname, "/public/js")));
 app.use(express.static(path.join(__dirname, '/image')));
 
+// View engine setup
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
-const mongoose = require("mongoose");
+// Session middleware configuration
+app.use(session({
+    secret: process.env.SESSION_SECRET, // Use a strong secret key
+    resave: false,
+    saveUninitialized: true
+}));
+
+// Route setup
+const authRoutes = require('./routes/auth');
+app.use('/auth', authRoutes);
+
+// MongoDB setup
 const mongoURL = "mongodb://127.0.0.1:27017/edc";
 const StartupApplication = require("./models/StartupApplication");
 
 mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true
 }).then(() => {
     console.log("Connected to MongoDB");
 }).catch((e) => {
     console.log(e);
 });
 
+// Routes
 app.get("/", (req, res) => {
     res.render("index");
 });
@@ -81,21 +100,25 @@ app.post("/submit", async (req, res) => {
             stage
         });
 
-        
         await newApplication.save();
-
-        res.render("successfull.ejs")
+        res.render("successfull.ejs");
     } catch (error) {
         console.error("Error submitting form:", error);
-        res.status(500).send("Error submitting form");
+        res.render("includes/error.ejs", { error });
     }
 });
 
+// Uncomment to enable admin route
+app.get("/admin", async (req, res) => {
+    const allData = await StartupApplication.find({});
+    res.render("includes/admin.ejs", { allData });
+});
 
+app.get("/apply/home", (req, res) => {
+    res.redirect("/");
+});
 
-app.get("/apply/home", (req,res)=>{
-    res.redirect("/")
-})
+// Start server
 app.listen(port, () => {
-    console.log(`The server is running on port${port}`);
+    console.log(`The server is running at http://localhost:${port}`);
 });

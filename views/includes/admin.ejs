@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <%- include("header.ejs") %>
+
+
+    <h1>Database for Startup and Innovation Idea!</h1>
+    <table>
+        <tr>
+            <th><b>Name</b></th>
+            <th><b>Email</b></th>
+            <th><b>Contact</b></th>
+            <th><b>Enrollment</b></th>
+            <th><b>Appl. Category</b></th>
+            <th><b>Team Members</b></th>
+            <th><b>Title</b></th>
+            <th><b>Define Problem</b></th>
+            <th><b>Solution</b></th>
+            <th><b>Uniqueness</b></th>
+            <th><b>College</b></th>
+            <th><b>Current Stage</b></th>
+            <th><b>Date</b></th>
+        </tr>
+        <% for(let every of allData){ %>
+
+
+            <tr>
+                <td>
+                    <%= every.name %>
+                </td>
+                <td>
+                    <%= every.email %>
+                </td>
+                <td>
+                    <%= every.contact %>
+                </td>
+                <td>
+                    <%= every.enrollment %>
+                </td>
+                <td>
+                    <%= every.category %>
+                </td>
+                <td>
+                    <%= every.teamMembers %>
+                </td>
+                <td>
+                    <%= every.startupTitle %>
+                </td>
+                <td>
+                    <%= every.problemStatement %>
+                </td>
+                <td>
+                    <%= every.solutionDescription %>
+                </td>
+                <td>
+                    <%= every.uniqueness %>
+                </td>
+                <td>
+                    <%= every.college %>
+                </td>
+                <td>
+                    <%= every.stage %>
+                </td>
+                <td>
+                    <%= every.createdAt.toString().split(" ").slice(0,4).join(" ") %>
+                </td>
+                <p>
+                    
+
+            </tr>
+
+            
+            
+           
+         <% } %>
+    </table>
+</body>
+</html>
