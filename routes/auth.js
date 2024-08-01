@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
         // Compare the provided password with the hashed password stored in the database
         
         const isMatch = await admin.comparePassword(password);
-        console.log(password);
+        
         
 
         if (!isMatch) {
