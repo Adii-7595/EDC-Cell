@@ -1,14 +1,18 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const dotenv = require('dotenv');
+
+dotenv.config(); // Move dotenv.config() to the top
 
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const dotenv = require('dotenv');
+const dbUrl = process.env.DATABASE_URL;
 
-dotenv.config();
+const mongoURL = dbUrl;
+const StartupApplication = require("./models/StartupApplication");
 
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,12 +37,9 @@ const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
 // MongoDB setup
-const mongoURL = "mongodb://127.0.0.1:27017/edc";
-const StartupApplication = require("./models/StartupApplication");
-
 mongoose.connect(mongoURL, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true
+    useNewUrlParser: true, // Uncomment these options
+    useUnifiedTopology: true // Uncomment these options
 }).then(() => {
     console.log("Connected to MongoDB");
 }).catch((e) => {
@@ -116,6 +117,9 @@ app.get("/admin", async (req, res) => {
 
 app.get("/apply/home", (req, res) => {
     res.redirect("/");
+});
+app.get("/facility", (req, res) => {
+    res.render("facility.ejs");
 });
 
 // Start server

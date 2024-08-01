@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d63384;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #d63384;
+        }
+
+        .inventory-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 250px;
+            margin-bottom: 2rem; /* Increased margin bottom to prevent overlap */
+        }
+
+        .inventory-item img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .inventory-item:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-fablab {
+            background: linear-gradient(135deg, #FFB6C1, #FFFFFF);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-fablab::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background: url('https://source.unsplash.com/random/800x600') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            transform: translateY(-20%);
+            transition: transform 0.3s;
+        }
+
+        .about-fablab:hover::before {
+            transform: translateY(-10%);
+        }
+
+        .about-fablab h2 {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-fablab h2 img {
+            margin-left: 10px;
+            max-width: 50px;
+        }
+
+        .about-fablab p {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75rem; /* 28px */
+            color: #4A5568; /* Gray-700 */
+        }
+
+        .hero-section {
+            background-color: #ffe6f2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 6rem;
+            margin-bottom: 8rem;
+            border-radius: 0.5rem;
+        }
+
+        .hero-section a {
+            background-color: #d63384;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .hero-section a:hover {
+            background-color: #c02573;
+        }
+
+        @media screen and (max-width: 600px) {
+            .inventory-item {
+                width: 100%;
+            }
+
+            .inventory-item img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- header section  -->
+    <%- include("includes/header.ejs") %>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <!-- Hero Section -->
+        <section class="hero-section text-center">
+            <h1 class="text-5xl font-bold mb-4">FABLAB PARUL UNIVERSITY</h1>
+            <p class="mb-4">A place for learning and innovation</p>
+            <a href="#">Request FABLAB</a>
+            <a href="#" class="ml-2">Join the Fablab Student Community</a>
+        </section>
+
+        <!-- About FabLab Section -->
+        <section class="about-fablab mb-9">
+            <h2 class="text-5xl font-bold mb-4">About FabLab <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxDmj8LQpcJ3u0qxbIzf4kRNmYmz9Ag3-uTg&s" alt=""></h2>
+            <p class="mb-4">A fabrication Laboratory (FABLAB) is a technical prototyping platform for learning and innovation. It offers an environment which empowers students to create almost anything through advanced technology...</p>
+        </section>
+
+        <!-- Inventory Section -->
+        <section class="bg-pink-100 shadow-md p-6 mb-8">
+            <h2 class="text-5xl font-bold mb-8">Inventory</h2>
+            <ul class="flex flex-wrap justify-center gap-8">
+                <li class="inventory-item text-lg font-bold">3D Printer: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyf8-9WCoJOYOKhwW4h7aS4usdmz10PBuaLg&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">3D Scanner: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDexvNWCA_KKWTAXoTLhUYfiOTMxWKlspB1w&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">CNC Router: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6PBFUw3oyepRbkmE1TTct1hdPnSDsmxi1nw&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">Laser Cutter: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdcCAWxjCFYgALAALrBnEEymrqxUXc4MRYKw&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">Vacuum Forming: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg5avyixopqoay35QgjBdl54sBatgekXHJAg&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">PCB Milling: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfGZ_uHXg-9S12G9UteM1lMWHrCyvvy0Z9Nw&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">Vinyl Cutter: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF-Wi_7NDuxrpmKQOrrkt5br9qDI6YeJAWIQ&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">ESD Workstation: 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDsJ2p-n5H-TEMTWKudpvlzsYh82pT3pGDWQ&s" alt="">
+                </li>
+                <li class="inventory-item text-lg font-bold">Mechanical Workbench 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsQ1RDcgbTOGthCYYgpnOZyIcBwVybtajvVg&s" alt="">
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <!-- Content of footer section -->
+        <%- include("includes/footer.ejs") %>
+
+    </footer>
+</body>
+</html>
