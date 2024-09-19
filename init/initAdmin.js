@@ -14,8 +14,8 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Function to create the initial admin user
 async function createAdmin() {
-    const username = 'EDC_2024'; // Change to your desired username
-    const password = 'Edc@123'; // Change to your desired password
+    const username = process.env.DATABSE_USER; // Change to your desired username
+    const password = process.env.DATABASE_PASSWORD; // Change to your desired password
 
     try {
         const admin = new Admin({ username, password });
